@@ -43,14 +43,5 @@ with DAG(
     # [START postgres_operator_howto_guide_get_all_pets]
     get_all_pets = PostgresOperator(task_id="get_all_pets", sql="SELECT * FROM pet;")
     # [END postgres_operator_howto_guide_get_all_pets]
-    # [START postgres_operator_howto_guide_get_birth_date]
-    get_birth_date = PostgresOperator(
-        task_id="get_birth_date",
-        sql="SELECT * FROM pet WHERE birth_date BETWEEN SYMMETRIC %(begin_date)s AND %(end_date)s",
-        parameters={"begin_date": "2020-01-01", "end_date": "2020-12-31"},
-        runtime_parameters={'statement_timeout': '3000ms'},
-    )
-    # [END postgres_operator_howto_guide_get_birth_date]
-
     create_pet_table >> populate_pet_table >> get_all_pets >> get_birth_date
     # [END postgres_operator_howto_guide]
