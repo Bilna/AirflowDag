@@ -20,8 +20,8 @@ dag_psql = DAG(
     description='use case of psql operator in airflow',
     start_date = airflow.utils.dates.days_ago(1)
 )
-create_table_sql_query = """CREATE TABLE employee(id INT NOT NULL, name VARCHAR(250) NOT NULL, dept VARCHAR(250) NOT NULL);"""
-insert_data_sql_query = """insert into employee(id, name, dept) values(1, 'vamshi','bigdata'),(2, 'divya','bigdata'),(3, 'binny','projectmanager'),(4, 'omair','projectmanager') ;"""
+create_table_sql_query = "CREATE TABLE employee(id INT NOT NULL, name VARCHAR(250) NOT NULL, dept VARCHAR(250) NOT NULL);"
+insert_data_sql_query = """insert into employee(id, name, dept) values(1, 'vamshi','bigdata'),(2, 'divya','bigdata'),(3, 'binny','projectmanager'),(4, 'omair','projectmanager');"""
 
 create_table = PostgresOperator(
     sql = create_table_sql_query,
