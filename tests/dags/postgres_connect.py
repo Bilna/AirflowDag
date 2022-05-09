@@ -1,6 +1,4 @@
-from datetime import datetime, timedelta
-from airflow import DAG
-from airflow.providers.postgres.operators.postgres import PostgresOperatorimport airflow
+import airflow
 from datetime import timedelta
 from airflow import DAG
 from airflow.operators.postgres_operator import PostgresOperator
