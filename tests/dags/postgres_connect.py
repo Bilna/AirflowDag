@@ -38,6 +38,3 @@ insert_data = PostgresOperator(
     )
 
 create_table >> insert_data
-
-    if __name__ == "__main__":
-        dag_psql.cli()
