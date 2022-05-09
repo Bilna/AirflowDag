@@ -43,5 +43,5 @@ with DAG(
     # [START postgres_operator_howto_guide_get_all_pets]
     get_all_pets = PostgresOperator(task_id="get_all_pets", sql="SELECT * FROM pet;")
     # [END postgres_operator_howto_guide_get_all_pets]
-    create_pet_table >> populate_pet_table >> get_all_pets >> get_birth_date
+    create_pet_table >> populate_pet_table >> get_all_pets
     # [END postgres_operator_howto_guide]
