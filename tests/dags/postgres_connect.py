@@ -15,7 +15,7 @@ with DAG(
     # [START postgres_operator_howto_guide_create_pet_table]
     create_pet_table = PostgresOperator(
         task_id="create_pet_table",
-        postgres_conn_id="postgres_default",
+        postgres_conn_id="postgres_connect",
         sql="""
             CREATE TABLE IF NOT EXISTS pet (
             pet_id SERIAL PRIMARY KEY,
@@ -29,7 +29,7 @@ with DAG(
     # [START postgres_operator_howto_guide_populate_pet_table]
     populate_pet_table = PostgresOperator(
         task_id="populate_pet_table",
-        postgres_conn_id="postgres_default",
+        postgres_conn_id="postgres_connect",
         sql="""
             INSERT INTO pet (name, pet_type, birth_date, OWNER)
             VALUES ( 'Max', 'Dog', '2018-07-05', 'Jane');
