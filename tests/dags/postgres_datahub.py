@@ -13,7 +13,7 @@ from datahub.ingestion.run.pipeline import Pipeline
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "email": ["jdoe@example.com"],
+    "email": ["bilna@example.com"],
     "email_on_failure": False,
     "email_on_retry": False,
     "retries": 1,
@@ -50,8 +50,8 @@ def ingest_postgresql(j):
             "type": "datahub-kafka",
             "config": {
                 "connection": {
-                    "bootstrap": 'http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:31092',
-                    "schema_registry_url": 'http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081'
+                    "bootstrap": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:31092",
+                    "schema_registry_url": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081"
                 }
             }
         }
