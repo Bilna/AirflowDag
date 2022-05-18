@@ -28,9 +28,9 @@ def ingest_postgresql(j):
             "type": "postgres",
             "config": {
                 "username": "postgres",
-                "password": "postgres",
-                "database": "demo1",
-                "host_port": "airflow-postgresql.airflow:5432",
+                "password": "password",
+                "database": "airflow",
+                "host_port": "100.64.25.120:5432",
                 # "stateful_ingestion": {
                 #     "enabled": True,
                 #     "state_provider": {
@@ -51,7 +51,7 @@ def ingest_postgresql(j):
             "config": {
                 "connection": {
                     "bootstrap": 'http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:31092',
-                    "schema_registry_url": 'http://http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081'
+                    "schema_registry_url": 'http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081'
                 }
             }
         }
