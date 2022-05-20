@@ -51,7 +51,7 @@ def ingest_postgresql(j):
             "config": {
                 "connection": {
                     "bootstrap": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:31092",
-                    "schema_registry_url": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081"
+                    "schema_registry_url": "http://dmschema.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081"
                 }
             }
         }
