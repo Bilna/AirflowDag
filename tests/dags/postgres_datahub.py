@@ -35,13 +35,9 @@ def ingest_postgresql(j):
         },
         "pipeline_name": "datahub-local-postgres_db",
         "sink": {
-            "type": "datahub-kafka",
-            "config": {
-                "connection": {
-                    "bootstrap": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:9092",
-                    "schema_registry_url": "http://dmschema.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081"
-                }
-            }
+  		type: "datahub-rest"
+  		config:
+    			server: "http://datahub-datahub-gms.datahub.svc.cluster.local:8080"
         }
     })
     pipeline.run()
