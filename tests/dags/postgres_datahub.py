@@ -35,9 +35,10 @@ def ingest_postgresql(j):
         },
         "pipeline_name": "datahub-local-postgres_db",
         "sink": {
-  		type: "datahub-rest"
-  		config:
-    			server: "http://datahub-datahub-gms.datahub.svc.cluster.local:8080"
+  		"type": "datahub-rest",
+  		"config":{
+    		   "server": "http://datahub-datahub-gms.datahub.svc.cluster.local:8080"
+		}
         }
     })
     pipeline.run()
