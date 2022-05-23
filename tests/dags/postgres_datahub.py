@@ -30,19 +30,7 @@ def ingest_postgresql(j):
                 "username": "postgres",
                 "password": "password",
                 "database": "airflow",
-                "host_port": "100.64.25.120:5432",
-                # "stateful_ingestion": {
-                #     "enabled": True,
-                #     "state_provider": {
-                #         "type": "datahub",
-                #         "config": {
-                #             "datahub_api": {
-                #                 "server": 'http://10.118.241.229:8080',
-                #                 "token": "eyJhbGciOiJIUzI1NiJ9.eyJhY3RvclR5cGUiOiJVU0VSIiwiYWN0b3JJZCI6ImRhdGFodWIiLCJ0eXBlIjoiUEVSU09OQUwiLCJ2ZXJzaW9uIjoiMSIsImV4cCI6MTY2MjY5NjUzMiwianRpIjoiMmY5ZTc0ZmYtNjk4YS00YzQxLWIwNTYtZGEwYTdkYjQ2ZGIwIiwic3ViIjoiZGF0YWh1YiIsImlzcyI6ImRhdGFodWItbWV0YWRhdGEtc2VydmljZSJ9.QOWGIAiyaFRy2wC5pVMYD8HarrQex9Vy2MSCMEOgnP4"
-                #             }
-                #         }
-                #     }
-                # }
+                "host_port": "100.64.25.120:5432"
             },
         },
         "pipeline_name": "datahub-local-postgres_db",
@@ -50,7 +38,7 @@ def ingest_postgresql(j):
             "type": "datahub-kafka",
             "config": {
                 "connection": {
-                    "bootstrap": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:31092",
+                    "bootstrap": "http://datahub.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:9092",
                     "schema_registry_url": "http://dmschema.odc-data-mgmt-01-drm.k8s.cec.lab.emc.com:8081"
                 }
             }
